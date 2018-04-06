@@ -15,6 +15,7 @@ const CodeMirror = createReactClass({
 	propTypes: {
 		autoFocus: PropTypes.bool,
 		className: PropTypes.any,
+		styles: PropTypes.object,
 		codeMirrorInstance: PropTypes.func,
 		defaultValue: PropTypes.string,
 		name: PropTypes.string,
@@ -118,7 +119,7 @@ const CodeMirror = createReactClass({
 			this.props.className
 		);
 		return (
-			<div className={editorClassName}>
+			<div className={editorClassName} styles={this.props.styles}>
 				<textarea
 					ref={ref => this.textareaNode = ref}
 					name={this.props.name || this.props.path}
